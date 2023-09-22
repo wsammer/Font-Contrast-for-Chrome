@@ -1,0 +1,275 @@
+<!--Options.html
+	Fushko-->
+<!DOCTYPE HTML>
+<html lang ="en">
+	<head>
+	<meta charset="utf-8">
+	<link href="assets/css/main.css" rel="stylesheet">
+	<link href="assets/css/options.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700|Crimson+Text:400,400i' rel='stylesheet'>
+	<title>Font Contrast Options</title>
+	</head>
+<body>
+	<div class ="wrapper">
+
+		<div class ="checkboxes">
+
+			<h3>General</h3>
+
+			<div class="settings">
+				<span>Activate on all websites</span>
+
+				<div class="help-tip" id="defaultEnTip">
+				<p>
+					Toggles the add-on automatically on every website possible.
+					<br>When this is disabled, the app will enable only on whitelisted websites, or when pressing the "C" icon in the add-on bar.
+				</p>
+				</div>
+
+				<label class="container">
+				<input type="checkbox" id="defaultEn">
+				<span class="checkmark"></span>
+				</label>
+			</div>
+
+			<h3>Global options</h3>
+
+			<div class ="settings">
+				<span>Advanced mode</span>
+				<div class="help-tip">
+					<p>
+					Dims text to a darker shade of its color, instead of just black.
+					<br>e.g. Light grey turns dark grey.
+					<br>The effect can be adjusted with the brightness slider.
+
+					<br>
+					<br><span style="color:yellow">This feature is a work in progress.</span>
+					</p>
+				</div>
+				<label class="container">
+					<input type="checkbox" id="advDimming">
+					<span class="checkmark"></span>
+				</label>
+			</div>
+
+			<div class ="settings">
+				<span>Brightness (%)</span>
+
+				<div class="help-tip">
+					<p>
+					Determines the brightness percentage of text.<br> e.g. 50% equals half brightness.<br>Requires "Advanced mode" to be checked.
+					</p>
+				</div>
+				<span class ="sliderLabel" id = "brt-label"></span>
+				<input type = "range" min = "0" max = "100" value = "50" class="slider" id = "brt-slider">
+			</div>
+
+			<div class ="settings" id ="strOption">
+			<span>Strength</span>
+			<div class="help-tip">
+				<p>
+				Adjusts the detection of dark backgrounds.
+				<br><br>If the add-on dims light text against dark backgrounds, try lowering this value.
+				</p>
+			</div>
+
+			<span class ="sliderLabel" id = "strLabel"></span>
+			<input type = "range" min = "-100" max = "100" class="slider" id = "strSlider">
+			</div>
+
+			<div class ="settings" id ="sizeOption">
+			<span>Increase font (%)</span>
+
+			<div class="help-tip">
+				<p>
+				Increases font size. Fonts above the size threshold won't be affected.
+				</p>
+			</div>
+
+			<span class ="sliderLabel" id = "sizeLabel"></span>
+			<input type = "range" min = "0" max = "100" class="slider" id = "sizeSlider">
+			</div>
+
+			<div class ="settings" id ="threshOption">
+				<span>Size threshold (px)</span>
+
+				<div class="help-tip">
+					<p>
+					Determines the maximum size a font has to be (in pixels) for it to be increased.<br>By default, only fonts at 12px or lower are affected.
+					</p>
+				</div>
+				<span class ="sliderLabel" id = "threshLabel"></span>
+				<input type = "range" min = "0" max = "50" value = "0" class="slider" id = "threshSlider">
+			</div>
+
+			<div class ="settings">
+			<span>Avoid colorful text</span>
+
+			<div class="help-tip">
+				<p>
+				Attempts to avoid colorful text and links, if they are considered readable.
+				<br><br>Links have a slightly higher threshold, i.e. the same color might not be dimmed if it's a link.
+				<br>Can be adjusted with "Strength".
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="skipColoreds">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+
+			<div class ="settings">
+			<span>Bold text</span>
+
+			<div class="help-tip">
+				<p>
+				Changes the font weight of all text to bold.
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="boldText">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+
+			<div class ="settings">
+			<span>Skip headings</span>
+
+			<div class="help-tip">
+				<p>
+				Avoids dimming all big headings. (&lth1&gt, &lth2&gt, &lth3&gt)
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="skipHeadings">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+			<div class ="settings">
+				<span>Skip white text</span>
+
+				<div class="help-tip">
+				<p>
+					Avoids dimming all white text.<br>
+					White text is usually behind images, where determining the background color is not always possible.<br>
+				</p>
+				</div>
+
+				<label class="container">
+				<input type="checkbox" id="skipWhites">
+				<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class ="settings">
+				<span>Underline black links</span>
+
+				<div class="help-tip">
+				<p>
+					Adds an underline to links that turn black with the add-on enabled, to distinguish them from other black text.
+				</p>
+				</div>
+
+				<label class="container">
+				<input type="checkbox" id="underlineLinks">
+				<span class="checkmark"></span>
+				</label>
+			</div>
+
+			<div class ="settings">
+			<span>Force max opacity</span>
+
+			<div class="help-tip">
+				<p>
+				Some websites use dark fonts that still look grey because of low opacity. This option forces full opacity on all text.<br><br>Disable this on websites that use opacity to hide some elements (e.g. YouTube).
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="forceOpacity">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+
+			<div class ="settings">
+			<span>Input border</span>
+
+			<div class="help-tip">
+				<p>
+				Attempts to add a black outline around text areas.<br><br><span style="color:yellow">This feature is experimental.</span>
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="input-border">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+
+
+			<div class ="settings">
+			<span>Force black placeholder</span>
+
+			<div class="help-tip" id="plhdlrTip">
+				<p>
+				Forces all placeholder text to turn black, instead of just increasing their opacity. Useful in websites where placeholders are still grey with the add-on enabled.
+				</p>
+			</div>
+
+			<label class="container">
+				<input type="checkbox" id="forcePlhdr">
+				<span class="checkmark"></span>
+			</label>
+			</div>
+
+		</div>
+
+		<div>
+			<h3>Whitelist</h3>
+			<textarea id="urltext" placeholder="Enter URL (eg. 'wikihow.com')" cols=80 rows=1></textarea>
+			<button id="add">Add</button>
+			<button id="reset">Clear list</button>
+		</div>
+
+		<div class="message" id="msg"></div>
+
+		<div class="scrolltable">
+			<table id="whitelist">
+			<thead>
+				<tr id="header">
+				<th>URL</th>
+				<th>Strength</th>
+				</tr>
+			</thead>
+			<tbody id="WLtbody"></tbody>
+			</table>
+		</div>
+
+		<div>
+			<h3>Blacklist</h3>
+			<textarea id="BLurltext" placeholder="Enter URL (eg. 'meteoearth.com')" cols=80 rows=1></textarea>
+			<button id="BLadd">Add</button>
+			<button id="BLreset">Clear list</button>
+		</div>
+
+		<div class="message" id="BLmsg"></div>
+		<div class="scrolltable">
+			<table id="blacklist">
+			<thead>
+				<tr id="BLheader">
+					<th>URL</th>
+				</tr>
+			</thead>
+			<tbody id="BLtbody">
+			</tbody>
+			</table>
+		</div>
+
+		<a href="Welcome.html" target="_blank"><img src="assets/icons/halo.png" style="width:64px;position:relative;margin-left:0px;margin-bottom:0px;">Help Guide</a>
+	</div> <!--wrapper-->
+
+	<script src="src/options.js"></script>
+</body>
+</html>

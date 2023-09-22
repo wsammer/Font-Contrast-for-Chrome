@@ -1,0 +1,53 @@
+{
+  "name": "Font Contrast",
+  "description": "Improves webpage readability.",
+  "version": "1.5.9",
+  "author": "Fushko",
+  "permissions": [
+   "tabs",
+   "activeTab",
+   "scripting",
+   "storage"
+  ],
+  "content_scripts": [{
+    "js": [
+      "src/pageAction_options.js",
+      "src/enable.js",
+      "src/disable.js",
+      "src/options.js"
+      ],
+    "matches": ["*://*/*"]
+  }],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": false,
+    "open_in_tab": false
+},
+  "action": {
+    "default_icon": {
+      "128": "assets/icons/halo.png"
+    },
+    "default_title": "Manage Font Contrast for this website",
+    "default_popup": "pageAction_popup.html"
+  },
+  "icons": { 
+      "128": "assets/icons/halo.png"
+  },
+ "commands": {
+    "toggle": {
+      "suggested_key": {
+        "default": "Ctrl+1",
+        "mac": "Command+1"
+      },
+      "description": "Toggle contrast fix",
+      "global": true
+    }
+  },
+  "manifest_version": 3
+}

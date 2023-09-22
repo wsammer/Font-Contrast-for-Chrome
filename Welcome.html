@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Font Contrast Guide</title>
+		<style>
+			@font-face {
+				font-family: Lato;
+				src: url('assets/css/fonts/LatoLatin-Bold.woff2') format('woff2');
+				font-weight: bold;
+			}
+			@font-face {
+				font-family: Lato;
+				src: url('assets/css/fonts/LatoLatin-Regular.woff2') format('woff2');
+				font-weight: normal;
+			}
+			body{
+				font-family:'Lato', sans-serif;
+				font-size: 20px;
+				background-color: white;
+				color:black;
+				margin-left: 2.35em;
+				margin-right:2.35em;
+				margin-bottom:3em;
+				line-height:1.3em;
+			}
+			#grey{
+				color: rgb(160, 160, 160);
+				color: rgb(120, 124, 126);
+			}
+			img {
+				pointer-events:none;
+			}
+			#ico {
+				width: 24px;
+				height: 24px;
+			}
+			li{
+				margin-bottom: 0.7em;
+			}
+			h2{
+				margin-top:1.35em;
+				margin-bottom: 0;
+			}
+			h3{
+				margin-top:2.7em;
+				margin-bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>How to use Font Contrast</h3>
+		<p>
+			The app has two buttons:
+			<ul>
+				<li>The <img src="assets/icons/off.png" alt="Grey 'C' Icon" id ="ico"> button in the add-on bar toggles the add-on for the current tab. It turns black to indicate activation.</li>
+				<li>The <img src="assets/icons/halo.png" alt="Blue Halo 'C' Icon" id = "ico"> button in the address bar manages the options for the current page.</li>
+			</ul>
+		</p>
+
+		<p id ="grey">If the add-on is activated, this text should appear black!</p>
+
+		<h3>Options guide</h3>
+
+		<p>Clicking on the options button will open this window:</p>
+		<img src="assets/icons/options.png">
+		<ul>
+		<li><strong>Strength:</strong> Adjusts the detection of dark backgrounds. This value can be adjusted to catch more low-contrast text.</li>
+		<li><strong>Increase font (%) / Threshold (px):</strong> Enlarges fonts that are below the threshold (in pixels).</li>
+		<br>
+		<li><strong>Whitelist:</strong> Adds the website to the whitelist.</li>
+		<li><strong>Blacklist:</strong> Adds the website to the blacklist.</li>
+		<li><strong>Advanced mode:</strong> Dims text to a darker shade (rather than just black). The effect can be adjusted with the Brightness slider, which appears when this option is activated.</li>
+		<br>
+
+		<li><strong>Bold text:</strong> Changes the font weight of all text to bold.</li>
+		<li><strong>Avoid colorful text:</strong>  Attempts to avoid colorful text and links, if they are considered readable.</li>
+		<li><strong>Underline black links:</strong> Adds an underline to links that turn black, to distinguish them from other text.</li>
+
+		<br>
+		<li><strong>Force max opacity:</strong> Forces full opacity on all fonts.</li>
+		<li><strong>Force black placeholder:</strong> Forces all placeholder text to turn black, rather than just increasing their opacity.</li>
+		<li><strong>Input border:</strong> Attempts to add a black outline around text areas.</li>
+		<br>
+		<li><strong>Skip headings:</strong> Avoids dimming all big headings.</li>
+		<li><strong>Skip white text:</strong> Avoids dimming all white text.</li>
+			<br>
+		<li><strong>More options:</strong> Opens a tab with all the options, including the ability to activate the add-on everywhere, the global options (with in-depth tooltips), the whitelist/blacklist, and a link to this page.</li>
+		</ul>
+	</body>
+</html>

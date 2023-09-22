@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head> 
+		<meta charset="utf-8">
+		<link href="assets/css/main.css" rel="stylesheet">
+		<link href="assets/css/pageAction.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400" rel="stylesheet">
+		<title>Font Contrast</title>
+	</head>
+	<body>  
+		<div id ="wrapper">
+			<div class ="sliders">
+				<div class = "sliderDiv">
+					<span class ="sliderDesc">Strength</span>
+					<div>
+						<span class = "val" id = "strLabel"></span>
+						<input type = "range" class = "option slider" id = "strSlider" min = "-100" max = "100" step = "1">
+					</div>
+				</div>
+				<div id="size-sliders">
+					<div class = "sliderDiv">
+						<span class ="sliderDesc">
+							Increase font (%)
+						</span>
+						<div>
+							<span class = "val" id = "sizeLabel"></span>
+							<input type = "range" class = "option slider" id ="sizeSlider" min = "0" max = "100" value = "0">
+						</div>
+					</div>
+					<div class = "sliderDiv">
+						<span class ="sliderDesc">Threshold (px)</span>
+						<div>
+							<span class = "val" id = "thresholdLabel"></span>
+							<input type = "range" class = "option slider" id ="thresholdSlider" min = "0" max = "50" value = "14">
+						</div>
+					</div>
+				</div>
+				
+				<div class = "sliderDiv" id="brt-div">
+					<span class ="sliderDesc">Brightness (%)</span>
+					<div>
+						<span class = "val" id = "brt-label"></span>
+						<input type = "range" class = "option slider" id = "brt-slider" min = "0" max = "100" step = "1" value="50">
+					</div>
+				</div>
+			</div>
+			
+			<div id="urlContainer">
+				<div id ="url"></div>
+				<button id="refreshBtn">Refresh</button>
+			</div>
+			
+			<div id="checksContainer">
+				<div class ="separator">
+					<div>
+						<label for ="addWL">Whitelist</label>
+						<label class="container">
+							<input type="checkbox" id="addWL">
+							<span class="checkmark"></span>
+						</label>
+					</div>  
+					<div>
+						<label for ="addBL">Blacklist</label>
+						<label class="container">
+							<input type="checkbox" id="addBL">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="option" id="adv-mode">
+						<label for="advDimming">Advanced mode</label>
+						<label class="container">
+							<input type="checkbox" id="advDimming">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+				<div class ="separator" id ="sep">
+					<div class ="option">
+						<label for ="boldText">Bold text</label>
+						<label class="container">
+							<input type="checkbox" id="boldText">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class ="option">
+						<label for ="skipColoreds">Avoid colorful text</label>
+						<label class="container">
+							<input type="checkbox" id="skipColoreds">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class ="option">
+						<label for ="underlineLinks">Underline black links</label>
+						<label class="container">
+							<input type="checkbox" id="underlineLinks">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+				<div class ="separator">
+					<div class ="forces">
+						<div class ="option">
+							<label for="forceOpacity">Force max opacity</label>
+							<label class="container">
+								<input type="checkbox" id="forceOpacity">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class ="option">
+							<label for="forcePlhdr">Force black placeholder</label>
+							<label class="container">
+								<input type="checkbox" id="forcePlhdr">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						<div class ="option">
+							<label for="outline">Input border</label>
+							<label class="container">
+								<input type="checkbox" id="outline">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class ="separator" id ="sep">
+					<div class ="option">
+						<label for ="skipHeadings">Skip headings</label>
+						<label class="container">
+							<input type="checkbox" id="skipHeadings">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class ="option">
+						<label for ="skipWhites">Skip white text</label>
+						<label class="container">
+							<input type="checkbox" id="skipWhites">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+			</div><!--checks-->
+		<button id="optionsBtn">More options</button>
+		</div> <!--wrapper-->
+		<script src="src/pageAction_options.js"></script>
+	</body>
+</html>
