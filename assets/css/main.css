@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Lato;
+    src: url('fonts/LatoLatin-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+
+.slider:focus {
+    outline: none;
+}
+
+.slider::-moz-range-thumb
+{
+	background:white;
+	cursor:w-resize;
+}
+.slider::-moz-range-track 
+{
+	background: rgb(196, 196, 196);
+	cursor: pointer;
+}

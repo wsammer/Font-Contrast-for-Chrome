@@ -1,1 +1,318 @@
+/**
+ * Copyright (C) 2019 Francesco Fusco. All rights reserved.
+ * License: https://github.com/Fushko/font-contrast#license
+ */
 
+html,body{
+    height:100%;
+    margin:auto;
+}
+body { 
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color:black; 
+    width:95%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding:0;
+    width:100%;
+    font-size:2.5vw;
+}
+.settings {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.checkboxes{
+    display:flex;
+    flex-direction:column;
+}
+.checkboxes > * {
+    margin-bottom: 1.35em;
+}
+.slider 
+{
+    width: 35%;
+    font-size: 0.5em;
+    background: transparent;
+    float:right;
+}
+.slider:focus 
+{
+    outline: none;
+}
+.slider::-moz-range-thumb 
+{
+    height: 1.9em;
+    width: 0.8em;
+    border-radius: 8px;
+    border: 0.3em solid black;
+}
+.slider::-moz-range-track 
+{
+    width: 100%;
+    height: 0.6em;
+    cursor: pointer;
+    border-radius: 1em;
+}
+.sliderLabel 
+{
+    position:absolute;
+    right:35vw;
+    font-size:1.7em;
+    font-family: 'Crimson Text', serif;
+}
+button 
+{
+    padding: 0.35em 1em;
+    cursor: pointer;
+    font-family:"Lato";
+    border-radius: 5px;
+    transition: background-color 0.1s ease-out;
+    color:black;
+    background-color: #eee;
+    border: 0.32vw solid black;
+}
+button:hover 
+{
+    color: white;
+    background-color: black;
+}
+button.remove 
+{
+    padding: 0.4em 0.8em;
+    word-break: keep-all;
+}
+textarea {
+    width: 100%;
+    resize: none; 
+    font-family: 'Crimson Text', serif; 
+    font-style: italic; 
+    font-size: 1.7em;
+    border: 0.32vw solid black;
+    border-radius: 0.15em;
+    white-space: nowrap;
+    color:black;
+    background-color:white;
+}
+table { 
+    border-collapse:collapse;
+    margin: 0;
+    padding: 0; 
+    width: 100%; 
+    table-layout:auto;
+    word-break:break-all;
+    overflow:scroll;
+}
+table th:nth-child(1) { /*URL*/
+    font-size: 0.9em;
+    width: 90%;
+    word-break: keep-all; 
+    text-align: left 
+}
+table th:nth-child(2) { /*Strength label*/
+    font-size: 0.9em;
+    width: 10%;
+    word-break: keep-all; 
+    text-align: center;
+}
+#whitelist td:nth-child(2) { /*Strength value*/
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    position:relative;
+    font-size:1.7em;
+}
+th {
+    font-size: 0.75em;
+    font-family:'Segoe UI','Ubuntu'; 
+}
+tr { 
+    font-family:'Cambria', 'Ubuntu';
+    font-size: 0.8em;
+    overflow-wrap:break-word ;
+    transition: background-color ease-out 0.1s;
+}
+tr:hover { 
+    background-color: #e6e6e6;
+}
+.scrolltable { 
+    margin-top: 1.2em;
+    height: 10em;
+    overflow: auto; 
+}
+.scrolltable th div { 
+    position: absolute;
+}
+#header, #BLheader {
+    background-color: #e6e6e6;
+    text-align:left;
+}
+.message {
+    display: inline-block;
+    height: 0;
+    font-size: 0.9em;
+    font-style: italic;
+    padding-top: 0.35em;
+    padding-bottom: 0.25em;
+    transition: background-color ease-out 0.1s;
+    color: black
+}
+::placeholder {
+    color: navy;
+    opacity: 1;
+    font-size:0.9em
+}
+input[type='checkbox'] {
+    float: right;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.container {
+    float:right;
+    position: relative;
+    padding-left: 2.7em;
+    cursor: pointer;
+    user-select: none;
+}
+.checkmark {
+    position: absolute;
+    top: -1.7vw;
+    left: 0;
+    height: 1.1em;
+    width: 1.1em;
+    background-color: #eee;
+    border: 0.15em solid black;
+    border-radius: 3em;
+    transition: color ease-out 0.1s;
+    transition: background-color ease-out 0.1s;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+    background-color: black;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after 
+{
+    left: 0.41em;
+    top: 0.3em;
+    width: 0.17em;
+    height: 0.35em;
+
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+.settings
+{
+    display:flex;
+    flex-direction: row;
+    position:relative;
+}
+.help-tip 
+{
+    position:absolute;
+    left: 12em;
+    text-align: center;
+    background-color: black;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1em;
+    line-height: 1.6em;
+    cursor: default;
+}
+/*
+#strTip{
+    left: 10.5vw;
+}
+#sizeTip {
+    left: 18.5vw;
+}
+#thrTip {
+    left: 20.5vw;
+}
+#defaultEnTip{
+    left: 27vw;
+}
+#skipTip{
+    left: 19.5vw;
+}
+#skipHdnTip{
+    left: 16vw;
+}
+#advTip{
+    left: 22vw;
+}
+#smoothTip {
+    left: 21.5vw;
+}
+#boldTip {
+    left: 11vw;
+}
+#plhdlrTip {
+    left: 30.5vw;
+}
+*/
+.help-tip:before{
+    content:'?';
+    color:#fff;
+}
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.help-tip p{
+    display: none;
+    text-align: left;
+    background-color: rgb(30, 32, 33);
+    padding: 17px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    left: -4px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+    z-index: 1;
+}
+.help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    left:10px;
+    top:-12px;
+}
+/* Prevents the tooltip from being hidden */
+/*
+.help-tip p:after{ 
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}*/
+#welcome {
+    color:navy;
+    cursor: pointer;
+    margin-top:5vw;
+    text-decoration: underline;
+}

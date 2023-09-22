@@ -1,0 +1,224 @@
+/**
+ * Copyright (C) 2019 Francesco Fusco. All rights reserved.
+ * License: https://github.com/Fushko/font-contrast#license
+ */
+html
+{
+    margin:0;
+    padding:0;
+}
+body
+{
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    font-size: 17px;
+    margin:0;
+    padding:0;
+    width:470px;
+    height:100%;
+    margin:auto;
+}
+#wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 17px;
+    margin-top: 10px;
+}
+
+/* Sliders */
+
+.sliderDiv
+{
+    display:flex;
+    justify-content: space-between;
+    align-items:baseline;
+}
+.val 
+{
+    font-size:26px;
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
+    margin-right: 10px;
+}
+.slider 
+{
+    width: 235px;
+    border-radius: 5px;
+}
+
+.slider:focus {
+    outline: none;
+}
+.slider::-moz-range-thumb 
+{
+    width: 0.5em;
+    height: 1.1em;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+.slider::-moz-range-track 
+{
+    width: 100%;
+    height: 5px;
+    border-radius: 1em;
+}
+#urlContainer 
+{
+	display:flex;
+	justify-content:center;
+
+	padding-top:1em;
+	padding-bottom:1em;
+	height:1.35em;
+
+	position:relative;
+	z-index:1;
+}
+#url {
+
+	z-index:3;
+	
+	font-size: 100%;
+	font-family: 'Cambria', 'Ubuntu', sans-serif;
+	font-style: normal;
+	color: navy;
+	transition: opacity ease-out 0.1s;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+#refreshBtn
+{
+	position:absolute;
+	bottom:0.6em;
+	opacity:0;
+	z-index:2;
+	
+	cursor: context-menu;
+	font-size:1em;
+	font-weight:normal;
+	color:navy;
+	border: 2px solid navy;
+	transition: opacity ease-in 0.3s;
+}
+#size-sliders
+{
+	border-left: 1px solid rgb(160, 160, 160);
+	border-radius: 1em;
+	margin-top:0.2em;
+	margin-bottom:0.2em;
+	padding-left:1em;
+	
+	display:flex;
+	flex-direction:column;
+	align-content:center;
+}
+
+/*Checkboxes*/
+#checksContainer {
+    margin-top:0.7em;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    font-size:0.97em;
+}
+.separator{
+    margin-right:1em;
+    width:46%;
+    margin-bottom:0.7em;
+}
+.separator div {
+    margin-bottom:0.35em;
+}
+#sep{
+    margin-left:0.35em;
+    width:42%;
+}
+
+/*Buttons/checkmarks*/
+
+button {
+    font-size: 15px;
+    padding: 0.35em 1em;
+    cursor: pointer;
+    font-family:"Lato";
+    font-weight:normal;
+    border-radius: 5px;
+    transition: background-color 0.1s ease-out;
+    color:black;
+    background-color: #eee;
+    border: 0.15em solid black;
+}
+button:hover {
+    color: white;
+    background-color: black;
+}
+#refreshBtn:hover 
+{
+    transition: color ease-out 0.1s;
+    transition: background-color ease-out 0.1s;
+    color:white;
+    background-color:navy;
+}
+#optionsBtn
+{
+    width:125px;
+    align-self:flex-end;
+}
+input[type='checkbox'] {
+    float: right;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.container {
+    float:right;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+.checkmark {
+    position: absolute;
+    margin-left: 0.7em;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border: 2px solid black;
+    border-radius: 20px;
+    transition: color ease-out 0.1s;
+    transition: background-color ease-out 0.1s;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+    background-color: black;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    left:  6px;
+    top: 2px;
+    width: 2px;
+    height: 7px;
+    margin:0;
+    padding:0;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+label{
+    -moz-user-select: none;
+}
