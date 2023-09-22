@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang = "zxx">
+    <head>
+        <meta charset="utf-8">
+        <title>Color test</title>
+        <style>
+                body {
+                    color:black;
+                    background-color:white;
+                    font-size:20px;
+                }
+                .dictionaryYellow{
+                    color:rgb(245, 166, 35)
+                }
+                .dictionaryBlue {
+                    color:rgb(58, 118, 195);
+                }
+                *{
+                    margin:0.7em;
+                }
+                a{
+                    display: block;
+                }
+                #textLinkCompare{
+                    display:flex;
+                    flex-direction:row;
+                }
+        </style>
+    </head>
+    <body>
+
+    <p id="node" style="background-color:rgb(20,20,20); color:rgba(230,230,230,0.5)">RGBA color</p>
+
+    <span id="new_nodes"></span>
+
+    <button id="add">Add</button>
+    <script>
+        let count = 0;
+
+        add.onclick = (e) => {
+
+            let color1 = '230,230,230,0.5';
+            let color2 = '200,200,200,0.5';
+
+            /*if (count++ % 2 == 0) {
+                color = '200,200,200,0.5';
+            }*/
+
+            new_nodes.innerHTML += `<p style="background-color:rgb(20,20,20); color:rgba(${color1})">RGBA color</p>`;
+            new_nodes.innerHTML += `<p style="background-color:rgb(20,20,20); color:rgba(${color2})">RGBA color</p>`;
+        };
+    </script>
+
+	<!--<p style="color:rgb(17, 119, 67)">RGB readable</p>
+	<p style="color:rgba(17,119,67, 0.1); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.2); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.3); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.4); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.5); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.6); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.7); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.8); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.9); ">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 1); ">RGBA readable</p>
+
+	<p style="color:rgb(205, 169, 167); background-color:rgb(26,26,26)">RGB readable</p>
+	<p style="color:rgba(17,119,67, 0.2); ">RGBA readable</p>
+	<p style="color:rgba(67,119,67, 0.2); background-color:rgb(200,200,200)">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.2); background-color:rgb(160,160,160)">RGBA readable</p>
+	<p style="color:rgba(17,229,67, 0.2); background-color:rgb(155,155,155)">RGBA readable</p>
+	<p style="color:rgba(17,229,67, 0.1); background-color:rgb(126,126,126)">RGBA readable</p>
+	<p style="color:rgba(67,119,67, 0.2); background-color:rgb(26,26,26)">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.3); background-color:rgb(36,36,36)">RGBA readable</p>
+	<p style="color:rgba(107,119,127, 0.4); background-color:rgb(86,86,86)">RGBA readable</p>
+	<p style="color:rgba(17,119,27, 0.5); background-color:rgb(116,116,116)">RGBA readable</p>
+	<p style="color:rgba(17,119,27, 0.6); background-color:rgb(156,156,156)">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.7); background-color:rgb(26,26,26)">RGBA readable</p>
+	<p style="color:rgba(17,119,67, 0.8); background-color:rgb(26,26,26)">RGBA readable</p>
+	<p style="color:rgba(17,39,17, 0.9); background-color:rgb(26,26,26)">RGBA unreadable</p>
+	<p style="color:rgba(17,39,17, 1); ">RGBA readable</p>
+
+
+        <p style ="color:rgb(221, 221, 221)">Lorem ipsum dolor sit amet</p>
+        <p class ="dictionaryBlue">Lorem ipsum dolor sit amet</p>
+        <p class ="dictionaryYellow">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(204, 102, 153)">Lorem ipsum dolor sit amet</p>
+        <a style="color:rgb(204, 102, 153)">Lorem ipsum dolor sit amet (link)</a>
+
+        <p style="color:rgb(255,0,0)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(0, 255, 0)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(0,0,255)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(64,0,0)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(127,0,0)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(255,0,0)">Lorem ipsum dolor sit amet</p>
+
+        <div id ="textLinkCompare">
+        <div>
+        <p style="color:rgb(0, 63,  0)">Text</p>
+        <p style="color:rgb(0, 127, 0)">Text</p>
+        <p style="color:rgb(0, 147, 0)">Text</p>
+        <p style="color:rgb(0, 157, 0)">Text</p>
+        <p style="color:rgb(0, 167, 0)">Text</p>
+        <p style="color:rgb(0, 187, 0)">Text</p>
+        <p style="color:rgb(0, 197, 0)">Text</p>
+        <p style="color:rgb(0, 217, 0)">Text</p>
+        <p style="color:rgb(0, 227, 0)">Text</p>
+        <p style="color:rgb(0, 237, 0)">Text</p>
+        <p style="color:rgb(0, 247, 0)">Text</p>
+        <p style="color:rgb(0, 255, 0)">Text</p>
+        </div>
+        <div>
+        <a style="color:rgb(0, 63,  0)">Link</a>
+        <a style="color:rgb(0, 127, 0)">Link</a>
+        <a style="color:rgb(0, 147, 0)">Link</a>
+        <a style="color:rgb(0, 157, 0)">Link</a>
+        <a style="color:rgb(0, 167, 0)">Link</a>
+        <a style="color:rgb(0, 187, 0)">Link</a>
+        <a style="color:rgb(0, 197, 0)">Link</a>
+        <a style="color:rgb(0, 217, 0)">Link</a>
+        <a style="color:rgb(0, 227, 0)">Link</a>
+        <a style="color:rgb(0, 237, 0)">Link</a>
+        <a style="color:rgb(0, 247, 0)">Link</a>
+        <a style="color:rgb(0, 255, 0)">Link</a>
+    </div>
+        </div>
+        <p style="color:rgb(0,0,63)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(0,0,127)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(0,0,255)">Lorem ipsum dolor sit amet</p>
+        <p style="color:rgb(255,255,0)">Lorem ipsum dolor sit amet</p>
+        <p style="color:cyan">Lorem ipsum dolor sit amet</p>
+        <p style="color: #444; background-color: #D8F5D8">Lorem ipsum dolor sit amet</p>-->
+    </body>
+</html>
