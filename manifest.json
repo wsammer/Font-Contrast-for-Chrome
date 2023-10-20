@@ -1,13 +1,12 @@
 {
   "name": "Font Contrast",
   "description": "Improves webpage readability.",
-  "version": "1.5.9",
+  "version": "1.6.2",
   "author": "Fushko",
   "permissions": [
    "tabs",
-   "activeTab",
-   "scripting",
-   "storage"
+   "storage",
+   "<all_urls>"
   ],
   "content_scripts": [{
     "js": [
@@ -16,11 +15,10 @@
       "src/disable.js",
       "src/options.js"
       ],
-    "matches": ["*://*/*"]
+    "matches": [ "<all_urls>" ],
+    "all_frames": true,
+    "match_about_blank": true
   }],
-  "host_permissions": [
-    "<all_urls>"
-  ],
   "background": {
     "service_worker": "src/background.js"
   },
