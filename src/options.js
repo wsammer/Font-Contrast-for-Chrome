@@ -210,82 +210,118 @@ function isChecked(check)
 
 function addListeners()
 {
+	if (globalEnabled) {
 	globalEnabled.onclick = () => {
 		chrome.storage.local.set({'enableEverywhere': isChecked("defaultEn")});
 	};
+	}
 
+	if (skipHeadings) {
 	skipHeadings.onclick = () => {
 		chrome.storage.local.set({'skipHeadings': isChecked("skipHeadings")});
 	};
+	}
 
+	if (skipColoreds) {
 	skipColoreds.onclick = () => {
 		chrome.storage.local.set({'skipColoreds': isChecked("skipColoreds")});
 	};
+	}
 
+	if (advDimming) {
 	advDimming.onclick = () => {
 		chrome.storage.local.set({'advDimming': isChecked("advDimming")});
 	};
+	}
 
+	if (boldText) {
 	boldText.onclick = () => {
 		chrome.storage.local.set({'boldText': isChecked("boldText")});
 	};
+	}
 
+	if (forcePlhdr) {
 	forcePlhdr.onclick = () => {
 		chrome.storage.local.set({'forcePlhdr': isChecked("forcePlhdr")});
 	};
+	}
 
+	if (forceOpacity) {
 	forceOpacity.onclick = () => {
 		chrome.storage.local.set({'forceOpacity': isChecked("forceOpacity")});
 	};
+	}
 
+	if (skipWhites) {
 	skipWhites.onclick = () => {
 		chrome.storage.local.set({'skipWhites': isChecked("skipWhites")});
 	};
+	}
 
+	if (underlineLinks) {
 	underlineLinks.onclick = () => {
 		chrome.storage.local.set({'underlineLinks': isChecked("underlineLinks")});
 	};
+	}
 
+	if (input_border) {
 	input_border.onclick = () => {
 		chrome.storage.local.set({'input_border': isChecked("input-border")});
 	};
+	}
 
-	WLaddButton.addEventListener('click', saveURL.bind(this, true));
-	WLresetButton.addEventListener('click', reset.bind(this, true));
+	if (WLaddButton) WLaddButton.addEventListener('click', saveURL.bind(this, true));
+	if (WLresetButton) WLresetButton.addEventListener('click', reset.bind(this, true));
 
-	BLaddButton.addEventListener('click', saveURL.bind(this, false));
-	BLresetButton.addEventListener('click', reset.bind(this, false));
+	if (BLaddButton) BLaddButton.addEventListener('click', saveURL.bind(this, false));
+	if (BLresetButton) BLresetButton.addEventListener('click', reset.bind(this, false));
 
+	if (strSlider) {
 	strSlider.oninput = () => {
 		strLabel.innerText = strSlider.value;
 	};
+	}
 
+	if (sizeSlider) {
 	sizeSlider.oninput = () => {
 		sizeLabel.innerText = sizeSlider.value;
 	};
+	}
 
+	if (threshSlider) {
 	threshSlider.oninput = () => {
 		threshLabel.innerText = threshSlider.value;
 	};
+	}
 
+	if (brt_slider) {
 	brt_slider.oninput = () => {
 		brt_label.innerText = brt_slider.value;
 	};
+	}
 
+	if (brt_slider) {
 	brt_slider.onchange = () => {
 		chrome.storage.local.set({"brightness": brt_slider.value});
 	};
-
-	strSlider.onchange = () => {
-		chrome.storage.local.set({"globalStr": strSlider.value});
 	}
 
+	if (strSlider) {
+	strSlider.onchange = () => {
+		chrome.storage.local.set({"globalStr": strSlider.value});
+	};
+	}
+
+	if (sizeSlider) {
 	sizeSlider.onchange = () => {
 		chrome.storage.local.set({"size": sizeSlider.value});
 	};
+	}
 
+	if (threshSlider) {
 	threshSlider.onchange = () => {
 		chrome.storage.local.set({"sizeThreshold": threshSlider.value});
+	};
 	}
 }
 
