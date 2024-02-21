@@ -1,11 +1,13 @@
 {
   "name": "Font Contrast",
   "description": "Improves webpage readability.",
-  "version": "1.6.2",
+  "version": "1.6.4",
   "author": "Fushko",
   "permissions": [
    "tabs",
-   "storage",
+   "storage"
+  ],
+  "host_permissions": [
    "<all_urls>"
   ],
   "content_scripts": [{
